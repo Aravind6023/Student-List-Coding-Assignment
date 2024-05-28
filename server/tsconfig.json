@@ -17,5 +17,5 @@
       "@constants/*": ["src/constants"]
     }
   },
-  "include": ["src/**/*.ts", "_test_/**/*.ts"]
+  "include": ["src/**/*.ts", "_test_/**/*.ts", "index.ts"]
 }

@@ -2,8 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import adminRoute from './routes/adminRoutes';
-import connectDb from './config/dbConnections';
+import adminRoute from './src/routes/adminRoutes';
+import connectDb from './src/config/dbConnections';
 
 dotenv.config();
 
