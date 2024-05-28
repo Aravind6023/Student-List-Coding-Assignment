@@ -2,6 +2,13 @@ import { Request, Response } from 'express';
 import Student from '../models/studentModel';
 import { HttpStatus } from '../constants';
 
+
+
+const testVercel = async (req: Request, res: Response ) => {
+  res.json("Welcome to vercel deploy");
+}
+
+
 /**
  * Controller function to create a new student.
  * @param req The request object containing student data in the body.
@@ -125,4 +132,4 @@ const deleteStudent = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-export { createStudent, getAllStudents, updateStudent, deleteStudent };
+export { createStudent, getAllStudents, updateStudent, deleteStudent, testVercel };

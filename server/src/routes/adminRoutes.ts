@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllStudents, updateStudent, deleteStudent, createStudent } from '../controllers/adminControllers';
+import { getAllStudents, updateStudent, deleteStudent, createStudent, testVercel } from '../controllers/adminControllers';
 
 const router = express.Router();
 
@@ -8,5 +8,5 @@ router.post('/register', createStudent); // Create a new student
 router.put('/updatestudent/:id', updateStudent); // Update a student by ID
 router.get('/getallstudent', getAllStudents); // Get all students
 router.delete('/deletestudent/:id', deleteStudent); // Delete a student by ID
-
+router.get('/', testVercel)
 export default router;
