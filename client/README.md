@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+# Frontend Components Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This document provides an overview of the frontend components used in the project.
 
-## Available Scripts
+## 1) CustomButton Component
 
-In the project directory, you can run:
+- **Description:** Functional component for rendering a customized MUI Button.
+- **Props:**
+  - `bgColor`: Background color of the button.
+  - `placeholderValue`: Placeholder text for the button.
+  - `textCap`: Text transformation style for button text.
+  - `buttonWidth`: Width of the button.
+  - `functionName`: Function triggered on button click.
+- **Usage:** Customizable button for various functionalities.
 
-### `npm start`
+## 2) AdminStudentSection Component
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Description:** Represents the admin section of the student management interface.
+- **Features:**
+  - Uses MUI components like Typography, Stack, and Box for layout.
+  - Conditionally renders elements based on screen size using useMediaQuery.
+  - Functions for navigation, search, and rendering the student table.
+  - Utilizes SearchField and CustomButton components for search and adding students.
+- **Integration:** Fetches and displays student data in a table using BasicTable component.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 3) CustomForm Component
 
-### `npm test`
+- **Description:** Renders a form with custom input fields using react-hook-form for handling and validation.
+- **Props:**
+  - `submitButtonText`: Text for the submit button.
+  - `initialValues`: Initial values for form fields.
+  - `onSubmit`: Function triggered on form submission.
+  - `handleCancel`: Function for canceling form action.
+- **Functionality:** Handles form submission, validation, and error messages for required fields.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 4) AsideLayout Component
 
-### `npm run build`
+- **Description:** Represents the aside layout for side content display, such as a profile.
+- **Features:**
+  - Uses MUI Stack component for layout and styling.
+  - Conditional rendering of profile details based on screen size using useMediaQuery.
+  - Includes ProfileDetails component within the layout.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 5) Header Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Description:** Represents the header section of the application using MUI components like AppBar, Toolbar, and Typography.
+- **Features:**
+  - Conditional rendering of elements based on screen size using useMediaQuery.
+  - Includes MobileMenuDrawer component for mobile navigation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 6) MobileMenuDrawer Component
 
-### `npm run eject`
+- **Description:** Renders a mobile menu drawer for navigation.
+- **Features:**
+  - Uses MUI components like Drawer and IconButton.
+  - Controls drawer opening/closing with toggleDrawer function.
+  - Includes TemporaryDrawer component for temporary content display.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 7) TemporaryDrawer Component
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Description:** Represents a temporary drawer within the mobile menu drawer.
+- **Features:**
+  - Uses MUI components like Box for layout.
+  - Controls drawer opening/closing with toggleDrawer function.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 8) DeleteModal Component
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Description:** Renders a modal dialog for confirming deletion.
+- **Features:**
+  - Uses MUI components like Modal, Stack, and Typography.
+  - Confirms and executes deletion action with handleConfirmDelete function.
+  - Includes CustomButton components for confirmation options.
 
-## Learn More
+## 9) FormModal Component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Description:** Renders a modal form for editing student details.
+- **Props:**
+  - `open`: Boolean for modal open state.
+  - `defaultValues`: Default values for form fields.
+  - `onSubmit`: Function triggered on form submission.
+  - `onClose`: Function for closing the modal.
+- **Integration:** Includes CustomForm component within the modal for editing details.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 10) ProfileDetails Component
+
+- **Description:** Renders user profile details using MUI components like Box, Stack, Typography, and Avatar.
+- **Features:**
+  - Conditional rendering of elements based on screen size using useMediaQuery.
+  - Displays user's profile picture, name, and role.
+
+## 11) SearchField Component
+
+- **Description:** Renders a search input field using MUI Stack for layout.
+- **Functionality:** Used for search functionality within the application.
