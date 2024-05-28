@@ -24,7 +24,7 @@ This document provides an overview of the project structure, files, and function
 **Functionality:**
 - Reads environment variables using dotenv.
 - Defines an interface `EnvConfig` to specify the types of environment variables.
-- Initializes environment variables such as `PORT`, `CONNECTION_STRING`, `ACCESS_TOKEN_SECRET`, `EMAIL_USER`, `EMAIL_PASS`.
+- Initializes environment variables such as `PORT`, `CONNECTION_STRING`, `ACCESS_TOKEN_SECRET`.
 
 ### `adminControllers.ts`
 **Purpose:** Contains controller functions for CRUD operations related to students in the admin section.  
