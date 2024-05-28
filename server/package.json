@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
+<<<<<<< HEAD
+=======
+    "start": "nodemon src/index.ts",
+>>>>>>> 4a9b865a1b83a93bf97fbb376c5540c0e58bd646
     "cleanup": "cl.js",
     "test": "jest"
   },
