@@ -3,6 +3,12 @@
 ## Overview
 This document provides an overview of the project structure, files, and functionalities.
 
+**Tech Stack:**
+- `Node.js`: Backend JavaScript runtime for creating server-side applications.
+- `Express.js`: Web framework for Node.js used for handling HTTP requests and routes.
+- `MongoDB Atlas`: Cloud-based database service for storing and managing data.
+- `RESTful API`: Architecture style for designing networked applications, particularly HTTP-based APIs.
+
 ## Files and Functionalities
 
 ### `connectDb.ts`
