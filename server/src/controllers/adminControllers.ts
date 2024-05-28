@@ -3,7 +3,7 @@ import Student from '../models/studentModel';
 import { HttpStatus } from '../constants';
 
 
-const testVercel = async (req: Request, res: Response ) => {
+const testVercel = (req: Request, res: Response ) => {
   res.json("Welcome to vercel deploy");
 }
 
