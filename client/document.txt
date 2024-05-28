@@ -1,0 +1,80 @@
+1) CustomButton Component:
+
+This component is a functional component that renders a customized MUI Button.
+It accepts props like bgColor, placeholderValue, textCap, buttonWidth, and functionName to customize the button's appearance and behavior.
+It uses the onClick event to trigger the functionName when the button is clicked, allowing for custom actions.
+The textCap prop is used to set the text transformation style of the button text.
+The bgColor prop sets the background color of the button.
+The buttonWidth prop controls the width of the button.
+This component is reusable and can be used throughout the application for different button functionalities.
+
+2) AdminStudentSection Component:
+
+This component represents the admin section of the student management interface.
+It uses MUI components like Typography, Stack, and Box for layout and styling.
+The useMediaQuery hook is used to conditionally render elements based on screen size.
+It contains functions to handle navigation (handleCreateStudentPage), search (handleSearch), and rendering the student table.
+The SearchField and CustomButton components are used within this component for search functionality and adding new students, respectively.
+It fetches student data and displays it in a table using the BasicTable component.
+
+3) CustomForm Component:
+
+This component is used for rendering a form with custom input fields.
+It uses react-hook-form for form handling and validation.
+Props like submitButtonText, initialValues, onSubmit, and handleCancel are passed to customize the form's behavior.
+The form includes input fields for Name, Email, Phone, Enrollment Number, and Date of Admission.
+It handles form submission and cancellation with corresponding functions.
+Form validation is done using react-hook-form, and error messages are displayed for required fields.
+
+4) AsideLayout Component:
+
+This component represents the aside layout, typically used for displaying side content like a profile.
+It uses MUI components like Stack for layout and styling.
+The useMediaQuery hook is used to conditionally render the profile details based on screen size.
+It includes the ProfileDetails component within the layout for displaying user profile information.
+
+5) Header Component:
+
+This component represents the header section of the application.
+It uses MUI components like AppBar, Toolbar, and Typography for the header layout.
+The useMediaQuery hook is used to conditionally render elements based on screen size.
+It includes a mobile menu drawer component (MobileMenuDrawer) for mobile navigation.
+
+6) MobileMenuDrawer Component:
+
+This component is used for rendering a mobile menu drawer for navigation.
+It uses MUI components like Drawer and IconButton for the drawer layout and menu icon.
+The toggleDrawer function is used to control the opening and closing of the drawer.
+It includes the TemporaryDrawer component within the drawer for displaying temporary content.
+
+7) TemporaryDrawer Component:
+
+This component represents a temporary drawer used within the mobile menu drawer.
+It uses MUI components like Box for layout.
+The toggleDrawer function is used to control the opening and closing of the drawer.
+
+8) DeleteModal Component:
+
+This component is used for rendering a modal dialog for confirming deletion.
+It uses MUI components like Modal, Stack, and Typography for the modal layout.
+The handleConfirmDelete function is used to confirm and execute the deletion action.
+It includes CustomButton components for Yes and No options to confirm or cancel deletion.
+
+9) FormModal Component:
+
+This component is used for rendering a modal form for editing student details.
+It uses MUI components like Modal, Box, Typography, and CustomForm for the modal layout and form fields.
+Props like open, defaultValues, onSubmit, and onClose are passed to customize the modal's behavior.
+It includes the CustomForm component within the modal for editing student details.
+
+10) ProfileDetails Component:
+
+This component is used for rendering user profile details.
+It uses MUI components like Box, Stack, Typography, and Avatar for the profile layout and styling.
+The useMediaQuery hook is used to conditionally render elements based on screen size.
+It displays the user's profile picture, name, and role.
+
+11) SearchField Component:
+
+This component is used for rendering a search input field.
+It uses MUI components like Stack for layout.
