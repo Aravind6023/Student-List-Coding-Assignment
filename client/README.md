@@ -2,6 +2,13 @@
 
 This document provides an overview of the frontend components used in the project.
 
+- **Tech Stack :**
+  - `React`: JavaScript library for building user interfaces.
+  - `TypeScript`: Superset of JavaScript with static typing for enhanced development.
+  - `react-hook-form`: Library for managing forms in React with validation support.
+  - `Material UI`: React component library for UI design with pre-styled components.
+  - `SCSS`: Syntactically Awesome Style Sheets for styling components.
+
 ## 1) CustomButton Component
 
 - **Description:** Functional component for rendering a customized MUI Button.
