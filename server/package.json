@@ -4,8 +4,12 @@
   "description": "Admin Server",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node dist/index.js", // Changed to start the server from the compiled JavaScript file
     "dev": "nodemon src/index.ts",
+=======
+    "start": "nodemon src/index.ts",
+>>>>>>> e611d13fbb553dfe7b62f76d9ab4e3380cd53191
     "cleanup": "cl.js",
     "test": "jest"
   },
