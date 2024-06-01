@@ -29,7 +29,7 @@ const port = process.env.PORT || 5000;
 
 // routes
 app.use('/v1/admin', adminRoute);
-app.get('/test-vercel', testVercel);
+app.get('/', testVercel);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
