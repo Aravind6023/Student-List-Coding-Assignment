@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import adminRoute from './routes/adminRoutes';
 import connectDb from './config/dbConnections';
+import { testVercel } from './controllers/adminControllers';
 
 dotenv.config();
 
@@ -27,7 +28,8 @@ app.use(cors({
 const port = process.env.PORT || 5000;
 
 // routes
-app.use('https://student-list-coding-assignment-1.vercel.app/', adminRoute);
+app.use('/v1/admin', adminRoute);
+app.get('/test-vercel', testVercel);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
