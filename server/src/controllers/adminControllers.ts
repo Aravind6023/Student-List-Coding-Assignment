@@ -6,9 +6,10 @@ import { HttpStatus } from '../constants';
 
 const testVercel = async (req: Request, res: Response) => {
   try {
+    console.log("Success");
     res.json("Welcome to vercel deploy");
   } catch (error) {
-    console.error('Error in testVercel:', error);
+    console.error('Error in testVercel:', (error as Error).message);
     res.status(500).json({ message: 'An error occurred', error: (error as Error).message });
   }
 };
