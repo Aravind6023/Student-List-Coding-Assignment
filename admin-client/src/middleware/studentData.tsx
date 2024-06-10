@@ -25,19 +25,32 @@ const reducer = (state: StudentDataState, action: { type: DispatchAction; payloa
 export const useStudentData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const refetchData = async () => {
+  const fetchData = async () => {
     try {
       dispatch({ type: DispatchAction.UPDATE_START });
       const response = await axios.get<Student[]>('http://localhost:3456/v1/admin/getallstudent');
+      console.log("Data fetched successfully");
+      localStorage.setItem('cachedStudentData', JSON.stringify(response.data));
       dispatch({ type: DispatchAction.UPDATE_SUCCESS, payload: response.data });
-    } catch (error) {
+    } catch (error : any) {
+      console.error("Error fetching students:", error.message);
       dispatch({ type: DispatchAction.UPDATE_ERROR, payload: 'Error fetching students' });
     }
   };
 
   useEffect(() => {
-    refetchData();
+    const cachedData = localStorage.getItem('cachedStudentData');
+    if (cachedData) {
+      console.log("Using cached data");
+      dispatch({ type: DispatchAction.UPDATE_SUCCESS, payload: JSON.parse(cachedData) });
+    } else {
+      fetchData();
+    }
   }, []);
+
+  const refetchData = async () => {
+    await fetchData();
+  };
 
   return { ...state, dispatch, refetchData };
 };

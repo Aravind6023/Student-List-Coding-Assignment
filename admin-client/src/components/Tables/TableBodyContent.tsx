@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableBody, TableRow, TableCell, IconButton, useTheme, useMediaQuery, Avatar, Stack } from '@mui/material';
+import { TableBody, TableRow, TableCell, IconButton, useTheme, useMediaQuery, Avatar, Stack, Typography } from '@mui/material';
 import {ReactComponent as EditIcon} from '../../assets/edit.svg';
 import {ReactComponent as DeleteIcon} from '../../assets/Frame.svg';
 import { TableBodyContentProps } from '../../types/Types';

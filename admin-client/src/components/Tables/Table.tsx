@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, CircularProgress, Paper, Table, TableContainer } from '@mui/material';
+import { Box, CircularProgress, Paper, Table, TableContainer, Typography } from '@mui/material';
 import axios from 'axios';
 import { useStudentData } from '../../middleware/studentData';
 import FormModal from '../Modal/FormModal';
@@ -9,15 +9,19 @@ import TableBodyContent from './TableBodyContent';
 import { DispatchAction } from '../../middleware/globalContext';
 import { BasicTableProps, Inputs as FormInputs, Student } from '../../types/Types';
 import { formatDateForInput } from '../../utils/Utils';
+import { Stack } from '@mui/material';
 
 const BasicTable: React.FC<BasicTableProps> = ({ searchQuery }) => {
   const { students: allStudents, loading, dispatch, refetchData } = useStudentData();
   const [filteredStudents, setFilteredStudents] = useState<Student[]>([]);
+  //To open and close the modal
   const [open, setOpen] = useState(false);
+  //When the edit icon is clicked the selected Student will be stored in this state
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [studentToDelete, setStudentToDelete] = useState<Student | null>(null);
 
+  //side Effect : This is Used to filter the table by getting the searchQuery
   useEffect(() => {
     const filtered = allStudents.filter((student: Student) =>
       student.Name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -25,6 +29,7 @@ const BasicTable: React.FC<BasicTableProps> = ({ searchQuery }) => {
     setFilteredStudents(filtered);
   }, [searchQuery, allStudents]);
 
+  //
   const handleOpen = (student: Student) => {
     setSelectedStudent({
       ...student,
@@ -88,12 +93,20 @@ const BasicTable: React.FC<BasicTableProps> = ({ searchQuery }) => {
               <CircularProgress />
             </Box>
           ) : (
-            <TableBodyContent
-              students={filteredStudents}
-              handleOpen={handleOpen}
-              handleDelete={handleDelete}
-            />
-          )}
+            <>
+        {filteredStudents.length === 0 ? (
+          <Stack width='100%'>
+          <Typography p={2} textAlign='center'>No student record found</Typography>
+          </Stack>
+        ) : (
+          <TableBodyContent
+            students={filteredStudents}
+            handleOpen={handleOpen}
+            handleDelete={handleDelete}
+          />
+        )}
+      </>
+          ) }
         </Table>
       </TableContainer>
       <FormModal

@@ -10,10 +10,9 @@ dotenv.config();
 
 connectDb();
 
-export const app = express();
+const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
 
 app.use(cors({
     origin: '*', // Allow all origins

@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler } from "react-hook-form";
 import { CustomFormProps, Inputs } from '../../types/Types';
 import CustomButton from '../Button/CustomButton';
 import './customForm.scss';
@@ -10,7 +10,7 @@ const CustomForm: React.FC<CustomFormProps> = ({ submitButtonText, initialValues
     defaultValues: initialValues
   });
 
-  const onSubmitHandler: SubmitHandler<Inputs> = async (data) => {
+  const onSubmitHandler: SubmitHandler<Inputs> = async (data : Inputs) => {
     await onSubmit(data);
   };
 
