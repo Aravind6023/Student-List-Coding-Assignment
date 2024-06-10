@@ -27,7 +27,6 @@ const CreateStudent: React.FC = () => {
       const res = await axios.post('http://localhost:3456/v1/admin/register', newData);
       console.log(res.data.message)
       await refetchData();
-      console.log("jhghhgf")
       navigate('/');
     } catch (error: any) {
       console.error('Error adding student:', error);
